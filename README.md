@@ -7,7 +7,7 @@ arXiv preprint: 2506.22450, 2025.
 It can compute a specific kind of Singular Vectors in complex meteorological systems in particular
 to create Ensemble Systems based on initial condition perturbations.
 Written by 
-* Jens Winkler, Michael Denhard * for Deutscher Wetterdienst (DWD).
+* Jens Winkler, Michael Denhard for Deutscher Wetterdienst (DWD).
 
 The concept of Arnoldi Singular Vectors was theoretically developed by Jens Winkler, 
 Michael Denhard, Bernhard A. Schmitt and is published as 
@@ -284,7 +284,8 @@ The basic idea of 'run_asvtools.py' file, is to start the following parts:
   perturbations, than this is a hint that you probably choose the amplitude too large.
 
 
-  As an example 
+  As an example
+  
           ```
         amplitude=4000  # AREA='earth' , SV_VARS=[U,V]
         amplitude=500   # AREA='north_hemi' , SV_VARS=[T,U,V] 
@@ -300,8 +301,9 @@ The basic idea of 'run_asvtools.py' file, is to start the following parts:
 #### ii) prepare / clean folders
 
   Use 'asv.prep_arnoldi_dirs' in order to prepare and clean directories. E.g.:
-      asv.prep_arnoldi_dirs(clean_input_dir=True, keep_Q=False)
-
+  		```
+      	asv.prep_arnoldi_dirs(clean_input_dir=True, keep_Q=False)
+		```
   clean_input_dir= True  - vanishes all the input data (in particular the reference state)
   After changing a particular day / reference state you should clean the input dir 
   otherwise you can keep it in order to save time.
@@ -332,6 +334,7 @@ The basic idea of 'run_asvtools.py' file, is to start the following parts:
 
   Inside 'run_asvtools.py' you may start 'get_icon_opendata.sh' using subprocess.
   e.g.:
+  
           ```
           subprocess.check_call(['bash', os.path.join(asv.c.SV_WORK_DIR,'get_icon_opendata.sh'), 
                 'opendata' , asv.c.SV_INPUT_DIR ] )
@@ -376,16 +379,18 @@ The basic idea of 'run_asvtools.py' file, is to start the following parts:
   If you provide a proper netcdf reference in the input folder the program should handle it.
   
   If you have an ICON-grid grib file you can use 
-      ```
-    ./get_icon_opendata.sh    PATH_TO_DATA_ON_ICON_GRID_GRIBFILE   INPUT_DIR
-    ```
+      	```
+    	./get_icon_opendata.sh    PATH_TO_DATA_ON_ICON_GRID_GRIBFILE   INPUT_DIR
+    	```
   to transform it to a lat-lon netcdf file.
   
   
   We recommand to use analysis data, where 'lat' and 'lon' data is included as keys / variables.
   If you do not have such data, you may provide a specifc latlon file and save it perferibly as
   .npy (numpy) file within your workdir as 'll_025_latlon.npy' (or you adjust the line
-      LATLON_FILE= os.path.join(SV_WORK_DIR, 'll_025_latlon.npy')
+  		
+      	LATLON_FILE= os.path.join(SV_WORK_DIR, 'll_025_latlon.npy'
+  )
   inside the file 'asvtools/c.py'. Maybe there is no full functionality for this variant, we 
   recommand analysis data, which contains lat-lon data.
   
@@ -413,7 +418,9 @@ The following command keeps the current reference state in the input directory.
         asv.arnoldi(amplitude)
         ```      
       
-#### vi) Afterwards you have the option to start a forecast of the generated perturbed states:
+#### vi) Forecast of perturbed states
+Afterwards you have the option to start a forecast of the generated perturbed states:
+
         ```
         leadtime=72     # in hours.
         asv.forecast_states(amplitude, leadtime) 
@@ -421,10 +428,11 @@ The following command keeps the current reference state in the input directory.
 
  
 To run the file, saving the output in a logfile might be suitable. E.g.
+
         ```
         python run_asvtools.py > some_logfile.log 
         ```
-Consider a run as a batch job.
+Prefer a run as batch job.
 
 
 You will find the output_data in 'iodir/output'
@@ -515,33 +523,33 @@ Thanks in advance.
 
 First Article (Theoretical basis and results in systems of medium comlexity)
 
-@article{winkler_krylov_2020,
-	title = {Krylov methods for adjoint‐free singular vector based perturbations in dynamical systems},
-	volume = {146},
-	issn = {0035-9009, 1477-870X},
-	url = {https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.3668},
-	doi = {10.1002/qj.3668},
-	number = {726},
-	journal = {Quarterly Journal of the Royal Meteorological Society},
-	author = {Winkler, Jens and Denhard, Michael and Schmitt, Bernhard A.},
-	month = jan,
-	year = {2020},
-	pages = {225--239},
-}
+	@article{winkler_krylov_2020,
+		title = {Krylov methods for adjoint‐free singular vector based perturbations in dynamical systems},
+		volume = {146},
+		issn = {0035-9009, 1477-870X},
+		url = {https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.3668},
+		doi = {10.1002/qj.3668},
+		number = {726},
+		journal = {Quarterly Journal of the Royal Meteorological Society},
+		author = {Winkler, Jens and Denhard, Michael and Schmitt, Bernhard A.},
+		month = jan,
+		year = {2020},
+		pages = {225--239},
+	}
 
 
 Second Article (The one direcly corresponding to this repository)
 
-@misc{winkler_asv_2025,
-	title = {Arnoldi {Singular} {Vector} perturbations for machine learning weather prediction},
-	url = {http://arxiv.org/abs/2506.22450},
-	doi = {10.48550/arXiv.2506.22450},
-	publisher = {arXiv},
-	author = {Winkler, Jens and Denhard, Michael},
-	month = jun,
-	year = {2025},
-	keywords = {Physics - Atmospheric and Oceanic Physics, Computer Science - Machine Learning},
-}
+	@misc{winkler_asv_2025,
+		title = {Arnoldi {Singular} {Vector} perturbations for machine learning weather prediction},
+		url = {http://arxiv.org/abs/2506.22450},
+		doi = {10.48550/arXiv.2506.22450},
+		publisher = {arXiv},
+		author = {Winkler, Jens and Denhard, Michael},
+		month = jun,
+		year = {2025},
+		keywords = {Physics - Atmospheric and Oceanic Physics, Computer Science - Machine Learning},
+	}
 (Article submitteded to peer-reviewed journal.)
 
 Thanks you very much for your interest.
