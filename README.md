@@ -454,9 +454,9 @@ If your are not familiar with plotting of meteorological data, we recommand the 
 matplotlib and cartopy for a start.
 
 
-Directory structure:
+IODIR structure:
 ------------------------------------
-       |workdir
+       
        |iodir
              |input
                   |ref
@@ -466,7 +466,7 @@ Directory structure:
                   |output
              |output 
 ------------------------------------
-
+'iodir' is inside your workdir. Structure will be created automatically. 
 
 ## License
 
