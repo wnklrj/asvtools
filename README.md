@@ -1,4 +1,4 @@
-# asvtools - Arnoldi Singular Vector Perturbations for Machine Learning Weather Prediction (MLWP)
+# asvtools - Arnoldi Singular Vector Perturbations for Machine Learning Weather Prediction
 
 
 This is the repository directly corresponding to the Arnoldi Singular Vector (A-SV) perturbation 
@@ -11,7 +11,8 @@ Written by
 
 The concept of Arnoldi Singular Vectors was theoretically developed by Jens Winkler, 
 Michael Denhard, Bernhard A. Schmitt and is published as 
-[Krylov methods for adjoint-free singular vector based perturbations in dynamical systems](https://doi.org/10.1002/qj.3668), 2020. 
+[Krylov methods for adjoint-free singular vector based perturbations in dynamical systems](https://doi.org/10.1002/qj.3668), 
+Quart. Journ. Royal Met. Soc., 2020. 
 See reference section, below.  
 
 Please read this README completely first and start installation afterwards.
@@ -25,7 +26,7 @@ the Arnoldi iteration method (for further information see our articles).
 These inital condition perturbations can be used to create Ensemble Systems.
 
 It uses DWD ICON analysis data (or other suitable user-provided analysis data) and (currently) 
-the Pangu 6h or Pangu 24h MLWP forecast model from Huawei. 
+the Pangu 6h or Pangu 24h Machine Learning Weather Prediction (MLWP) forecast model from Huawei. 
 Pangu-Repository: [Pangu-Weather](https://github.com/198808xc/Pangu-Weather), Pangu-Article:
 [Pangu-Weather: A 3D High-Resolution Model for Fast and Accurate Global Weather Forecast](https://arxiv.org/abs/2211.02556)
 , 2022.
