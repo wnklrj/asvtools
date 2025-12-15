@@ -144,9 +144,10 @@ onnx==1.20.0 (previously also 1.12.0)
 onnxruntime-gpu==1.23.2 (previously also 1.19.2) 
 xarray==2023.6.0
 netCDF4==1.6.4
-eccodes==1.6.1
+eccodes==1.6.1. We used 'onnxruntime-gpu[cuda,cudnn]' (see above). 
 
 
+Addionally also
 cdo 2.5.2.
 eccodes 2.32.0
 CUDA 12.4
