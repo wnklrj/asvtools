@@ -1,4 +1,4 @@
-# asvtools - Arnoldi-SV Perturbations for Machine Learning Weather Prediction (MLWP)
+# asvtools - Arnoldi Singular Vector Perturbations for Machine Learning Weather Prediction (MLWP)
 
 
 This is the repository directly corresponding to the Arnoldi Singular Vector (A-SV) perturbation 
